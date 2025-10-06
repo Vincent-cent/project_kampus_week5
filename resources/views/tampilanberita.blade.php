@@ -11,7 +11,7 @@
         <tbody>
             @foreach ($project as $pro)
                 <tr>
-                    <td> {{ $pro ['id']}} </td>
+                    <td> <a href = "/berita/{{ $pro["id"] }}">{{ $pro ['id']}} </a></td>
                     <td> {{ $pro ['title'] }} </td>
                     <td> {{ $pro ['author']}} </td>
                     <td> {{ $pro ['published_at'] }} </td>

@@ -8,59 +8,17 @@ use App\Http\Requests\UpdateBeritaRequest;
 
 class BeritaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return view('tampilanberita', [
+            'project' => Berita::allBeritas()
+        ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function show($id)
     {
-        //
+    return view('beritadetail', [
+        'berita' => Berita::findBerita($id)
+    ]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreBeritaRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Berita $berita)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Berita $berita)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateBeritaRequest $request, Berita $berita)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Berita $berita)
-    {
-        //
-    }
+    
 }

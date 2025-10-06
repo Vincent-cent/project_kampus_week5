@@ -44,4 +44,15 @@ class Berita extends Model
         return self::$beritas;
     }
 
+    public static function findBerita($id)
+    {
+        $beritas = self::allBeritas();
+        foreach ($beritas as $berita) {
+            if ($berita['id'] == $id) {
+                return $berita;
+            }
+        }
+        return null;
+    }
+
 }
